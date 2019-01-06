@@ -22,7 +22,11 @@ module.exports = {
   ],
   'env': {
     'production': {},
-    'development': {},
+    'development': {
+      'plugins': [
+        'react-hot-loader/babel'
+      ]
+    },
     'test': {},
   }
 }
