@@ -11,7 +11,7 @@ module.exports = merge(baseConfig, {
   entry: {
     bundle: [
       `webpack-hot-middleware/client?path=http://localhost:${port}/__webpack_hmr`,
-      // '@babel/polyfill',
+      '@babel/polyfill',
       './src/index'
     ],
     /*

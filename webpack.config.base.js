@@ -9,16 +9,6 @@ const SRC_FOLDER = path.join(ROOT_FOLDER, 'src')
 module.exports = {
   module: {
     rules: [
-      // SASS CSS STYLE LOADER
-      {
-        test: /\.scss$/,
-        use: [
-          // fallback to style-loader in development
-          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader?sourceMap=true!',
-          'sass-loader?sourceMap=true!'
-        ]
-      },
       // BABEL LOADER
       {
         // test: /\.jsx?$/,
@@ -31,6 +21,16 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader',
         type: 'javascript/auto'
+      },
+      // SASS CSS STYLE LOADER
+      {
+        test: /\.scss$/,
+        use: [
+          // fallback to style-loader in development
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader?sourceMap=true!',
+          'sass-loader?sourceMap=true!'
+        ]
       },
       // IMAGE LOADER - FILE LOADER
       // https://www.npmjs.com/package/image-webpack-loader
@@ -65,6 +65,11 @@ module.exports = {
         ]
       },
     ]
+  },
+
+  // https://webpack.github.io/docs/configuration.html#resolve
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
   },
 
   plugins: [
