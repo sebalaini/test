@@ -17,8 +17,8 @@ module.exports = {
         'modules': false,
         'useBuiltIns': 'usage'
       },
-      '@babel/preset-react'
-    ]
+    ],
+    '@babel/preset-react'
   ],
   'env': {
     'production': {},
