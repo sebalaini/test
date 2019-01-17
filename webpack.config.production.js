@@ -2,6 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config.base')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(baseConfig, {
   mode: 'production',
@@ -31,4 +33,13 @@ module.exports = merge(baseConfig, {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
   ],
+
+  optimization: {
+    minimizer: [
+      // minify the JS bundle
+      new TerserPlugin(),
+      // minify the CSS bundle
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
 })

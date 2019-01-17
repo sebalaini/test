@@ -78,7 +78,9 @@ module.exports = {
     ]),
 
     // EXTRACT CSS FILE FROM JS
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'app.css',
+    }),
 
     // CREATE AND MINIFY AN HTML FILE FROM TEMPLATE
     new HtmlWebpackPlugin({
