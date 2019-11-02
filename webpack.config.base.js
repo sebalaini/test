@@ -79,7 +79,7 @@ module.exports = {
 
     // EXTRACT CSS FILE FROM JS
     new MiniCssExtractPlugin({
-      filename: 'app.css',
+      filename: 'bundle.css',
     }),
 
     // CREATE AND MINIFY AN HTML FILE FROM TEMPLATE
